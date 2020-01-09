@@ -442,11 +442,11 @@ TCPRelay.prototype.handleConnectionByLocal = function(connection) {
                 binary: true,
               },
               function() {
-                logger.debug(
-                  `[${connectionId}]: write data[length = ${
-                    dataCache.length
-                  }] [${dataCacheto.toString()}] client connection`,
-                );
+                // logger.debug(
+                //   `[${connectionId}]: write data[length = ${
+                //     dataCache.length
+                //   }] [${dataCacheto.toString()}] client connection`,
+                // );
                 dataCache = null;
               },
             );
