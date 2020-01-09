@@ -433,9 +433,6 @@ TCPRelay.prototype.handleConnectionByLocal = function(connection) {
           logger.info(`[${connectionId}]: connecting to server`);
           // data.slice(3) 包括： 1. 地址类型， 2。目标地址 3. 目标端口
           // 对 data.slice(3) 进行加密
-          logger.debug(
-            `[${connectionId}]: send data ${addressHeader.dstAddr}:${addressHeader.dstPort}  to websocket server`,
-          );
           serverConnection.send(encryptor.encrypt(data.slice(3)), function() {
             stage = STAGE_STREAM;
             dataCache = Buffer.concat(dataCache);
